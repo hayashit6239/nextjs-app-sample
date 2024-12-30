@@ -18,6 +18,7 @@ export const UserProfilePresentation: FC<Props> = (props) => {
                 <Image
                     src={imageUrl}
                     alt=""
+                    radius="md"
                     className="h-32 w-32 bg-white"
                 />
                 <Flex direction="column" className="sapce-y-4">

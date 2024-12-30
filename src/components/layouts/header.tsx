@@ -5,10 +5,10 @@ import { FC } from "react"
 
 export const Header: FC = () => {
     return (
-        <Flex direction="row" className="w-full h-[80px] px-6 py-8 place-content-between items-center bg-gray-950">
+        <Flex direction="row" className="bg-gradient-to-b from-gray-950 to-gray-7500 w-full h-[80px] px-6 py-8 place-content-between items-center">
             <Flex direction="row" className="space-x-3 items-center">
                 <Text
-                    className="text-red-700 font-bold text-xl"
+                    className="text-red-700 font-bold text-2xl"
                 >
                     NextAppRouter
                 </Text>

@@ -13,7 +13,7 @@ export const ProductsPresentation: FC<Props> = (props) => {
     const { products } = props;
  
     return (
-        <Flex wrap="wrap" className="h-full gap-x-8 gap-y-4">
+        <Flex wrap="wrap" className="h-full gap-x-4 gap-y-4">
             {products.map(x => {
                 return (
                     <ProductCard
@@ -40,14 +40,15 @@ const ProductCard: FC<ProductCard> = (props) => {
     const { id, title, price, imageUrl } = props;
 
     return (
-        <div key={id}>
+        <div key={id} className="font-bold">
             <Image
                 src={imageUrl}
                 alt=""
-                className="h-40 w-40 bg-white"
+                radius="md"
+                className="h-40 w-52 bg-white mb-2"
             />
-            <Text className="truncate text-sm">{title}</Text>
-            <Text className="text-sm">{price}</Text>
+            <Text className="truncate text-sm font-bold">{title}</Text>
+            <Text className="text-sm font-bold">{price}</Text>
         </div>
     );
 };
