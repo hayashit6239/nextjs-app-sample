@@ -10,7 +10,7 @@ type LoginForm = {
     password: string
 };
 
-const Login: FC = () => {
+export const SigninFormPresentation: FC = () => {
     const form = useForm<LoginForm>({
         initialValues: {
             username: "",
@@ -18,9 +18,10 @@ const Login: FC = () => {
         }
     });
 
-    const router = useRouter()
+    const router = useRouter();
 
     const handleSubmit = form.onSubmit((values) => {
+        console.log(values)
         const id = 1
         router.push(`/users/${id}`)
     })
@@ -52,5 +53,3 @@ const Login: FC = () => {
         </form>
     );
 };
-
-export default Login;

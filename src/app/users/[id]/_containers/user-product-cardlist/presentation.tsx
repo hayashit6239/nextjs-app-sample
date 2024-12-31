@@ -1,42 +1,41 @@
-"use client"
+"use client";
 
+import { Product } from "@/common/types/data";
 import { Flex, Image, Text } from "@mantine/core";
 import { FC } from "react";
-import { Product } from "./container";
 
 type Props = {
-    products: Product[]
+    products: Product[];
 };
 
-
-export const ProductsPresentation: FC<Props> = (props) => {
+export const UserProductCardListPresentation: FC<Props> = (props) => {
     const { products } = props;
- 
+
     return (
         <Flex wrap="wrap" className="h-full gap-x-4 gap-y-4">
-            {products.map(x => {
+            {products.map((x) => {
                 return (
-                    <ProductCard
+                    <UserProductCard
                         key={x.id}
                         id={x.id}
                         title={x.title}
                         price={x.price}
                         imageUrl={x.imageUrl}
                     />
-                )
+                );
             })}
         </Flex>
     );
 };
 
 type ProductCard = {
-    id: number,
-    title: string,
-    price: number,
-    imageUrl: string
+    id: number;
+    title: string;
+    price: number;
+    imageUrl: string;
 };
 
-const ProductCard: FC<ProductCard> = (props) => {
+const UserProductCard: FC<ProductCard> = (props) => {
     const { id, title, price, imageUrl } = props;
 
     return (
