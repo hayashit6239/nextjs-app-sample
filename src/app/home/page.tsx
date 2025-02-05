@@ -9,11 +9,9 @@ export default function HomePage() {
     return (
         <div className="px-20 space-y-8">
             <HomeHeader />
-            {/* <ErrorBoundary fallback={<Error error="失敗しています" />}> */}
             <Suspense fallback={<Loading />}>
                 <HomeProductCardList />
             </Suspense>
-            {/* </ErrorBoundary> */}
         </div>
     );
 }

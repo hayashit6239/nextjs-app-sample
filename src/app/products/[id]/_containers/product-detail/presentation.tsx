@@ -6,8 +6,10 @@ import { FC } from "react";
 type Props = {
     product: Product;
 };
+
 export const ProductDetailPresentation: FC<Props> = (props) => {
     const { product } = props;
+
     return (
         <Flex direction="column" className="h-screen w-full space-y-3">
             <Flex className="text-sm gap-1">

@@ -9,9 +9,9 @@ type Props = {
 export default async function ProductPage({ params }: Props) {
     const { id } = await params;
 
-    const productId = Number(id);
+    const productId = String(id);
 
-    if (typeof productId !== "number") {
+    if (typeof productId !== "string") {
         return;
     }
 
