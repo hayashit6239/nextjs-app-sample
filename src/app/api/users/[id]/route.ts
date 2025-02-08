@@ -1,6 +1,12 @@
 import { User } from "@/common/types/data";
 import { NextResponse } from "next/server";
 
+/**
+ * GET function for fetching quick users.
+ *
+ * @returns {Promise<NextResponse>} The response from the API.
+ * @throws {Error} If an error occurs during the API request.
+ */
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
     try {
         const id = (await params).id;

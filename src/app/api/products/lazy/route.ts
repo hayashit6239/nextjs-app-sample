@@ -2,9 +2,10 @@ import { Product } from "@/common/types/data";
 import { NextResponse } from "next/server";
 
 /**
- * GET /api/products
- * @description 商品一覧取得API
- * @returns {Promise<NextResponse>} - NextResponseオブジェクト
+ * GET function for fetching lazy products.
+ *
+ * @returns {Promise<NextResponse>} The response from the API.
+ * @throws {Error} If an error occurs during the API request.
  */
 export async function GET() {
     const res = await fetch(`${process.env.API_BASE_URL}/products/lazy`, {

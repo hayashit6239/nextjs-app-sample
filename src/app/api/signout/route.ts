@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 
 /**
- * POST /api/signout
- * @description ログアウトAPI
- * @param {NextRequest} req - NextRequestオブジェクト
- * @returns {Promise<NextResponse>} - NextResponseオブジェクト
+ * POST function for signing out a user.
+ *
+ * @param req - The incoming request object.
+ * @returns {Promise<NextResponse>} The response from the API.
+ * @throws {Error} If an error occurs during the API request.
  */
 export async function POST(req: NextRequest) {
     const data = await req.json();

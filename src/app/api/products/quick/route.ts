@@ -1,6 +1,12 @@
 import { Product } from "@/common/types/data";
 import { NextResponse } from "next/server";
 
+/**
+ * GET function for fetching quick products.
+ *
+ * @returns {Promise<NextResponse>} The response from the API.
+ * @throws {Error} If an error occurs during the API request.
+ */
 export async function GET() {
     try {
         const res = await fetch(`${process.env.API_BASE_URL}/products/quick`, {
