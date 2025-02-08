@@ -1,22 +1,21 @@
 import { Product } from "@/common/types/data";
 import { SearchProductCardListPresentation } from "./presentation";
 
+/**
+ * Fetches product data and renders the SearchProductCardListPresentation component.
+ *
+ * @returns {Promise<JSX.Element>} The SearchProductCardListPresentation component with the fetched product data.
+ * @throws Will throw an error if the fetch request fails.
+ */
 export async function SearchProductCardListContainer() {
-    try {
-        const res = await fetch(`${process.env.API_BASE_URL}/products/quick`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            next: {
-                revalidate: 60,
-            },
-        });
+    const res = await fetch(`http://localhost:3000/api/products/quick`);
 
-        const products = (await res.json()) as Product[];
-
-        return <SearchProductCardListPresentation products={products} />;
-    } catch {
-        console.log("error");
+    if (!res.ok) {
+        const error = await res.json();
+        console.log(error);
+        throw new Error(error.error || `Failed to fetch product (status: ${res.status})`);
     }
+
+    const products = (await res.json()) as Product[];
+    return <SearchProductCardListPresentation products={products} />;
 }

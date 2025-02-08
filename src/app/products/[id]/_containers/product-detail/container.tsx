@@ -5,8 +5,9 @@ import { ProductDetailPresentation } from "./presentation";
  * Fetches product data based on the provided productId and renders the ProductDetailPresentation component.
  *
  * @param {object} props - The component's props.
- * @param {number} props.productId - The ID of the product to fetch.
- * @returns {JSX.Element | undefined} The ProductDetailPresentation component with the fetched product data, or undefined if an error occurs.
+ * @param {string} props.productId - The ID of the product to fetch.
+ * @returns {Promise<JSX.Element>} The ProductDetailPresentation component with the fetched product data.
+ * @throws Will throw an error if the fetch request fails.
  */
 export async function ProductDetailContainer({ productId }: { productId: string }) {
     const id = productId;

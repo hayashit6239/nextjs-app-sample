@@ -1,38 +1,29 @@
+import { User } from "@/common/types/data";
 import { UserProfilePresentation } from "./presentation";
 
-export type User = {
-    id: number;
-    username: string;
-    displayName: string;
-    email: string;
-    profileImageUrl: string;
-    discription: string;
-};
-
+/**
+ * UserProfileContainer is a container component that fetches user data based on the provided user ID.
+ *
+ * @param id - The ID of the user.
+ * @returns {Promise<JSX.Element>} The presentation component UserProfilePresentation with the user data.
+ * @throws Error if the fetch request fails or returns an error response.
+ */
 export async function UserProfileContainer({ id }: { id: number }) {
-    try {
-        // ISR で実装、10 秒間キャッシュされる
-        const res = await fetch(`http://localhost:8000/users/${id}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            next: {
-                revalidate: 10,
-            },
-        });
+    const res = await fetch(`http://localhost:3000/api/users/${id}`);
 
-        const user = (await res.json()) as User;
-
-        return (
-            <UserProfilePresentation
-                username={user.username}
-                displayName={user.displayName}
-                discription={user.discription}
-                imageUrl={user.profileImageUrl}
-            />
-        );
-    } catch {
-        console.log("error");
+    if (!res.ok) {
+        const error = await res.json();
+        console.log(error);
+        throw new Error(error.error || `Failed to fetch product (status: ${res.status})`);
     }
+
+    const user = (await res.json()) as User;
+    return (
+        <UserProfilePresentation
+            username={user.username}
+            displayName={user.displayName}
+            discription={user.description}
+            imageUrl={user.profileImageUrl}
+        />
+    );
 }
