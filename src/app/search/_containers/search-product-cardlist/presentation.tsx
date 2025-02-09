@@ -57,7 +57,7 @@ const FilterPanel: FC<FilterPanelProps> = (props) => {
     return (
         <Flex direction="column" className="h-full min-w-20 m-5 space-y-3">
             <div className="space-y-2">
-                <Text className="font-bold">表示の状態</Text>
+                <Text className="font-bold">商品の状態</Text>
                 <Checkbox
                     onChange={() => {
                         setCondition((prev) => {

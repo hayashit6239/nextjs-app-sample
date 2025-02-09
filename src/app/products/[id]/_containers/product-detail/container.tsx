@@ -12,12 +12,10 @@ import { ProductDetailPresentation } from "./presentation";
 export async function ProductDetailContainer({ productId }: { productId: string }) {
     const id = productId;
 
-    const res = await fetch(`http://localhost:3000/api/products/lazy/${id}`);
+    const res = await fetch(`http://localhost:3000/api/products/${id}`);
 
     if (!res.ok) {
-        // エラーレスポンスを解析して、適切なエラーメッセージを返す
         const error = await res.json();
-        console.log(error);
         throw new Error(error.error || `Failed to fetch product (status: ${res.status})`);
     }
 
