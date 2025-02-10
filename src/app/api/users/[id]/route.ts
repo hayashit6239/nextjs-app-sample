@@ -18,9 +18,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
             headers: {
                 "Content-Type": "application/json",
             },
-            next: {
-                revalidate: 0,
-            },
+            cache: "no-cache",
         });
 
         if (!res.ok) {

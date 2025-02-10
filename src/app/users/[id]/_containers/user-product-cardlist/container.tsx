@@ -9,7 +9,7 @@ import { UserProductCardListPresentation } from "./presentation";
  * @throws Error if the fetch request fails or returns an error response.
  */
 export async function UserProductCardListContainer({ id }: { id: number }) {
-    const res = await fetch(`http://localhost:3000/api/products/quick`);
+    const res = await fetch(`${process.env.ROUTE_HANDLER_BASE_URL}/products/quick`);
 
     if (!res.ok) {
         const error = await res.json();
