@@ -4,9 +4,9 @@ const nextConfig: NextConfig = {
     env: {
         API_BASE_URL: "http://localhost:8000",
     },
-    experimental: {
-        ppr: "incremental",
-    },
+    // experimental: {
+    //     ppr: true,
+    // },
 };
 
 export default nextConfig;

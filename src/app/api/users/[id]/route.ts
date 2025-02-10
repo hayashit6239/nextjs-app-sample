@@ -2,8 +2,10 @@ import { User } from "@/common/types/data";
 import { NextResponse } from "next/server";
 
 /**
- * GET function for fetching quick users.
+ * GET function for fetching a user by ID.
  *
+ * @param request - The incoming request object.
+ * @param params - The parameters object containing the user ID.
  * @returns {Promise<NextResponse>} The response from the API.
  * @throws {Error} If an error occurs during the API request.
  */
@@ -11,13 +13,13 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
     try {
         const id = (await params).id;
 
-        const res = await fetch(`${process.env.API_BASE_URL}/users/${id}`, {
+        const res = await fetch(`${process.env.API_BASE_URL}/users/lazy/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
             },
             next: {
-                revalidate: 30,
+                revalidate: 0,
             },
         });
 
