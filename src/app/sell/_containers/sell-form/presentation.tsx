@@ -5,6 +5,7 @@ import { FC, useActionState } from "react";
 import { postSellForm } from "@/app/actions/sell";
 import { useAuthContext } from "@/features/contexts/authContexts";
 import { useRouter } from "next/navigation";
+import Form from "next/form";
 
 export const SellFromPresentation: FC = () => {
     const [state, formAction, pending] = useActionState(postSellForm, {
@@ -25,7 +26,7 @@ export const SellFromPresentation: FC = () => {
 
     return (
         <>
-            <form action={formAction}>
+            <Form action={formAction}>
                 <Flex direction="column" className="h-full w-full items-center justify-center gap-y-12 py-10">
                     <div className="w-2/3 space-y-1">
                         <Text className="font-bold text-lg">商品の写真 URL</Text>
@@ -80,7 +81,7 @@ export const SellFromPresentation: FC = () => {
                         出品
                     </Button>
                 </Flex>
-            </form>
+            </Form>
         </>
     );
 };
