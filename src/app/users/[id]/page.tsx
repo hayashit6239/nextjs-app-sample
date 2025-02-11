@@ -8,6 +8,12 @@ type Props = {
     }>;
 };
 
+/**
+ * UserPage is a page component that fetches and displays a user's profile and products.
+ *
+ * @param {Props} props - The component's props.
+ * @returns {JSX.Element} The UserPage component.
+ */
 export default async function UserPage({ params }: Props) {
     const { id } = await params;
 

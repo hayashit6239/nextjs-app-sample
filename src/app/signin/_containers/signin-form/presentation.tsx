@@ -3,7 +3,7 @@
 import { Button, Flex, TextInput, LoadingOverlay, PasswordInput } from "@mantine/core";
 import { FC, useActionState, useEffect } from "react";
 import { postSigninForm } from "@/app/actions/signin";
-import { useAuthContext } from "@/common/contexts/authContexts";
+import { useAuthContext } from "@/features/contexts/authContexts";
 import { useRouter } from "next/navigation";
 import { setCookieAction } from "@/app/actions/set-cookie";
 

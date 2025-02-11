@@ -1,4 +1,4 @@
-import { User } from "@/common/types/data";
+import { User } from "@/features/types/data";
 import { NextResponse } from "next/server";
 
 /**
@@ -19,6 +19,9 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
                 "Content-Type": "application/json",
             },
             cache: "no-cache",
+            next: {
+                revalidate: 0,
+            },
         });
 
         if (!res.ok) {

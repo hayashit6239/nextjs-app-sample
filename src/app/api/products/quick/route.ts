@@ -1,4 +1,4 @@
-import { Product } from "@/common/types/data";
+import { Product } from "@/features/types/data";
 import { NextResponse } from "next/server";
 
 /**
@@ -15,7 +15,7 @@ export async function GET() {
                 "Content-Type": "application/json",
             },
             next: {
-                revalidate: 30,
+                revalidate: 60,
             },
         });
 

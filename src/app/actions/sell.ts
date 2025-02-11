@@ -34,6 +34,13 @@ const SellFormSchema = z.object({
     condition: z.enum(["new", "used"]),
 });
 
+/**
+ * Validates the sell form data and sends a POST request to the API to create a new product.
+ *
+ * @param {SellState} prevState - The current state of the sell form.
+ * @param {FormData} formData - The form data to validate and submit.
+ * @returns {Promise<SellState>} The updated state of the sell form.
+ */
 export async function postSellForm(prevState: SellState, formData: FormData): Promise<SellState> {
     const imageUrl = formData.get("imageUrl") as string;
     const title = formData.get("title") as string;

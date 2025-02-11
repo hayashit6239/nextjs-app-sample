@@ -1,6 +1,6 @@
 "use client";
 
-import { Product } from "@/common/types/data";
+import { Product } from "@/features/types/data";
 import { Checkbox, Flex, Image, Text } from "@mantine/core";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";

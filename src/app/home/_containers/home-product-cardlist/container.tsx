@@ -1,4 +1,4 @@
-import { Product } from "@/common/types/data";
+import { Product } from "@/features/types/data";
 import { HomeProductCardListPresentation } from "./presentation";
 
 /**
@@ -8,7 +8,7 @@ import { HomeProductCardListPresentation } from "./presentation";
  * @throws Will throw an error if the fetch request fails.
  */
 export async function HomeProductCardListContainer() {
-    const res = await fetch(`http://localhost:3000/api/products/quick`);
+    const res = await fetch(`${process.env.ROUTE_HANDLER_BASE_URL}/products/quick`);
 
     if (!res.ok) {
         const error = await res.json();

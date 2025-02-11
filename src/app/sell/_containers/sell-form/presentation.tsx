@@ -3,7 +3,7 @@
 import { Button, Flex, LoadingOverlay, NumberInput, Select, Text, Textarea, TextInput } from "@mantine/core";
 import { FC, useActionState } from "react";
 import { postSellForm } from "@/app/actions/sell";
-import { useAuthContext } from "@/common/contexts/authContexts";
+import { useAuthContext } from "@/features/contexts/authContexts";
 import { useRouter } from "next/navigation";
 
 export const SellFromPresentation: FC = () => {

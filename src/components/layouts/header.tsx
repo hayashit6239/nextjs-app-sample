@@ -1,6 +1,6 @@
 "use client";
 
-import { useAuthContext } from "@/common/contexts/authContexts";
+import { useAuthContext } from "@/features/contexts/authContexts";
 import { Button, Flex, Image, Text } from "@mantine/core";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

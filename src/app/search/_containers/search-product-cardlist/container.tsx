@@ -1,4 +1,4 @@
-import { Product } from "@/common/types/data";
+import { Product } from "@/features/types/data";
 import { SearchProductCardListPresentation } from "./presentation";
 
 /**

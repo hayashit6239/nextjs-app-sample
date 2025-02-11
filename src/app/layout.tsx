@@ -7,7 +7,7 @@ import { MantineProvider } from "@mantine/core";
 // import { Button, Flex, Text } from "@mantine/core";
 // import Link from "next/link";
 // import { FC } from "react";
-import { AuthContextProvider } from "@/common/contexts/authContexts";
+import { AuthContextProvider } from "@/features/contexts/authContexts";
 import { Header } from "@/components/layouts/header";
 
 const geistSans = Geist({

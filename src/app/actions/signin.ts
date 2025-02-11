@@ -1,4 +1,4 @@
-import { User } from "@/common/types/data";
+import { User } from "@/features/types/data";
 import { z } from "zod";
 
 type SigninForm = {

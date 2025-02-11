@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { SigninFormPresentation } from "./presentation";
 import { useActionState } from "react-use-action-state";
-import { useAuthContext } from "@/common/contexts/authContexts";
+import { useAuthContext } from "@/features/contexts/authContexts";
 import { useRouter } from "next/navigation";
 import userEvent from "@testing-library/user-event";
 
