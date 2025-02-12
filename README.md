@@ -67,3 +67,12 @@ Route (app)                              Size     First Load JS
 ```terminal
 yarn dev
 ```
+
+## 3. ログイン
+
+商品一覧（/home）やユーザー詳細（/users/[id]）などはログインなしでも閲覧可能です。
+
+出品するためには下記の情報でログイン後に可能です。
+
+- ユーザー名:user
+- パスワード：password
