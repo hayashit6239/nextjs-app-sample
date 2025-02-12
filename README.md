@@ -6,7 +6,8 @@
 
 ## 0. 想定している動作環境
 
-ローカルで動かすことを想定したリポジトリとなっています。
+Mac のローカルで動かすことを想定したリポジトリとなっています。
+node と npm がインストールされている前提でお読みください。
 
 簡易的なバックエンドとして下記のリポジトリを利用します。
 
@@ -15,7 +16,8 @@ https://github.com/hayashit6239/nextjs-app-sample-json
 カレントディレクトリは `nextjs-app-sample-json` のルートディレクトリです。
 
 ```terminal
-npm run start
+npm install
+npm start
 ```
 
 ポート 8000 番で動作します。
@@ -27,7 +29,7 @@ npm run start
 インストール完了後、カレントディレクトリを `nextjs-app-sample` のルートディレクトリに移動します。
 
 ```terminal
-cp ./env.dummy ./env.environment
+cp ./.env.dummy ./.env.development
 yarn install
 yarn build
 ```
@@ -55,6 +57,8 @@ Route (app)                              Size     First Load JS
     └ /users/[id]
 ...
 ```
+
+一部の環境ではビルドが失敗する可能性があります。その場合は、スキップして次の実行にお進みください。
 
 ## 2. 実行
 
