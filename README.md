@@ -1,6 +1,6 @@
 # 概要
 
-[Next.js 15 App Router で実践 Web アプリケーション](https://zenn.dev/t_hayashi/articles/e7917167b68a6b) という記事のサンプルリポジトリです。
+[Next.js App Router で実装！フリマっぽいサンプルアプリ](https://zenn.dev/t_hayashi/articles/e7917167b68a6b) という記事のリポジトリです。
 
 # 利用手順
 
